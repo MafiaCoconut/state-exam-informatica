@@ -30,5 +30,6 @@ def main():
                 answer.append(l)
     print(*answer[:k])
 
+
 if __name__ == '__main__':
     main()

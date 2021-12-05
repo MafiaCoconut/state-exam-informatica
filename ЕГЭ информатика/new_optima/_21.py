@@ -11,26 +11,26 @@
 
 """
 start = 3
-end = 33
-not_occur = 16
-occur = 6
+finish = 35
+not_occur = 17
+occur = 12
 
 x = 1
 y = 2
 
 
-def F(n):
+def F(n, end):
     if n > end:
         return 0
     if n == end:
         return 1
     if n == not_occur:
         return 0
-    return F(n+x) + (0 if (n < occur < y * n) else F(n * y))
+    return F(n+x, end) + F(n*y, end)
 
 
 def main():
-    print(F(start))
+    print(F(start, occur) * F(occur, finish))
 
 
 if __name__ == '__main__':

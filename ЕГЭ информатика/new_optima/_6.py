@@ -7,30 +7,36 @@
     t = 2 - нужно найти минимальное
 """
 
-x = 9
-z = 4
-n = 5
-t = 2
-data = []
-summa = 0
 
-for i in range(10**(z-1), 10**z):
-    N, S = i, 1
+def main():
+    x = 9
+    z = 4
+    n = 5
+    t = 2
+    data = []
+    summa = 0
 
-    # Сюда подстовляется программа из варианта
-    while N > 0:
-        S = S * (N % 10)
-        N //= 10
+    for i in range(10**(z-1), 10**z):
+        N, S = i, 1
 
-    if S == x:
-        data.append(i)
+        # Сюда подстовляется программа из варианта
+        while N > 0:
+            S = S * (N % 10)
+            N //= 10
 
-print(data)
+        if S == x:
+            data.append(i)
 
-if t == 1:
-    for i in range(len(data)-1, len(data) - 1 - n, -1):
-        summa += data[i]
-elif t == 2:
-    for i in range(n):
-        summa += data[i]
-print(summa)
+    print(data)
+
+    if t == 1:
+        for i in range(len(data)-1, len(data) - 1 - n, -1):
+            summa += data[i]
+    elif t == 2:
+        for i in range(n):
+            summa += data[i]
+    print(summa)
+
+
+if __name__ == '__main__':
+    main()

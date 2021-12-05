@@ -19,25 +19,31 @@
 
 
     Если страниц с текстом в 16 раз больше чем страниц с изображением:
-    16х = у
-    Если срашивают сколько страниц всего, то ответ pg_t + pg_i
+    pgb = 16 * pgp
 """
 
-I = 112*2**23
-x = 8
 
-pg = 288
-pgp = pg / (x+1)
-pgb = pgp * x
+def main():
+    I = 112*2**23
+    x = 8
 
-#picture
-pk = 1024*2048
-pi = 11
-Ip = pk * pi * pgp
+    pg = 288
+    pgp = pg / (x+1)
+    pgb = pgp * x
 
-#book
-bk = 256
-bi = 4 * 8
-Ib = I-Ip
+    # picture
+    pk = 1024*2048
+    pi = 11
+    Ip = pk * pi * pgp
 
-print(Ib / (bk * bi * pgb))
+    # book
+    bk = 256
+    bi = 4 * 8
+    Ib = I-Ip
+
+    print(Ib / (bk * bi * pgb))
+
+
+if __name__ == '__main__':
+    main()
+

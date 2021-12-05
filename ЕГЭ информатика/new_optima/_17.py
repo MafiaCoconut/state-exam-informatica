@@ -68,25 +68,25 @@ def main():
             сс - система счисления в которую надо перевести число для второго условия
             х - число которое должно быть на конце записи в СС (выше по справке)
             z - если (10 < x < 100) -> z=100; если (100 < x < 1000) -> z=1000 и так далее..
-            occur - запись числа в сс заканчивается на x или НЕ заканчивается
+            occur - запись числа в сс заканчивается на x или НЕ заканчивается (True/False)
     """
     # Сумма цифр числа кратна N
     n = 5
 
     # CC запись числа заканчивается / НЕ заканчивается на X
-    cc = 16
-    occur = True
-    x = 78
-    z = 100
+    cc = 8
+    occur = False
+    x = 373
+    z = 1000
 
-    mini = 1171
-    maxix = 8750 + 1
+    start = 1008
+    end = 8163
 
     quantity = 0
     maxi = 0
     summa_all = 0
 
-    for value in range(mini, maxix):
+    for value in range(start, end + 1):
         flag1, summa = first_condition(value, n)
         flag2, new_value = second_condition(value, cc, x, z, occur)
 
@@ -101,7 +101,7 @@ def main():
     print("Сумма всех чисел - ", summa_all)
     #
     # print('----------------------------------------')
-    # check_first(n, mini, maxix)
+    # check_first(n, start, end)
     # print('----------------------------------------')
     # check_second(cc, x, z, occur)
 

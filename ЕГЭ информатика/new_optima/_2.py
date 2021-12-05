@@ -30,9 +30,14 @@ def fifi(a, b, c, d, e):
         print(a, b, c, d, e, '||', x)
 
 
-for a in (0, 1):
-    for b in (0, 1):
-        for c in (0, 1):
-            for d in (0, 1):
-                for e in (0, 1):
-                    fifi(a, b, c, d, e)
+def main():
+    for a in (0, 1):
+        for b in (0, 1):
+            for c in (0, 1):
+                for d in (0, 1):
+                    for e in (0, 1):
+                        fifi(a, b, c, d, e)
+
+
+if __name__ == '__main__':
+    main()

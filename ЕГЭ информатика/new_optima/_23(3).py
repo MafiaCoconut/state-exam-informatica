@@ -6,16 +6,19 @@
 """
 
 
-f = list(map(int, open('prime_numbers.txt', 'r').readline().split()))
-start = 15000000
-end = 16000000
-n = 8
-answer = []
-lst = []
+def main():
+    f = list(map(int, open('prime_numbers.txt', 'r').readline().split()))
+    start = 15000000
+    end = 16000000
+    n = 8
 
-for i in range(len(f)):
-    for j in range(i + 1, len(f) - 1):
-        if f[i] + n == f[j]:
-            x = f[i] * f[j]
-            if start <= x <= end:
-                print(x, f[i], f[j])
+    for i in range(len(f)):
+        for j in range(i + 1, len(f) - 1):
+            if f[i] + n == f[j]:
+                x = f[i] * f[j]
+                if start <= x <= end:
+                    print(x, f[i], f[j])
+
+
+if __name__ == '__main__':
+    main()
